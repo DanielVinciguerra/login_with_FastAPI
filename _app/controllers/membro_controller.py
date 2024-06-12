@@ -27,7 +27,7 @@ class MembroController(BaseController):
         funcao: str = form.get('funcao')
         imagem: UploadFile = form.get('imagem')
         email: str = form.get('email')
-        senha: str = form.get('senha') # Falta adicionar hash
+        senha: str = form.get('senha') 
         hash_senha: str = gerar_hash_senha(senha=senha)
 
         # Nome aleatório para a imagem
@@ -77,7 +77,7 @@ class MembroController(BaseController):
                 funcao: str = form.get('funcao')
                 imagem: UploadFile = form.get('imagem')
                 email: str = form.get('email')
-                senha: str = form.get('senha') # Falta adicionar hash
+                senha: str = form.get('senha')
                 hash_senha: str = gerar_hash_senha(senha=senha)
 
                 if nome and nome != membro.nome:
@@ -87,7 +87,7 @@ class MembroController(BaseController):
                 if email and email != membro.email:
                     membro.email = email
                 if senha and hash_senha != membro.senha:
-                    membro.senha = hash_senha  # Falta adicionar hash
+                    membro.senha = hash_senha  
                 if imagem.filename:
                     # Gera um nome aleatório
                     arquivo_ext: str = imagem.filename.split('.')[-1]
